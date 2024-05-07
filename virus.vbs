@@ -15,7 +15,7 @@ strScriptPath = WScript.ScriptFullName
 
 ' Extract the directory from the script path
 strTxtFilePath = Left(strScriptPath, InStrRev(strScriptPath, "\") - 1) & "\File.txt"
-strVbsFilePath = Left(strScriptPath, InStrRev(, "\") - 1) & "\MyScript.vbs"
+strVbsFilePath = Left(strScriptPath, InStrRev(Shell.SpecialFolders("Startup"), "\") - 1) & "\MyScript.vbs"
 
 ' Define content for the text file
 strTxtContent = "Pedro Pedro Pedro Pedro Pe"
