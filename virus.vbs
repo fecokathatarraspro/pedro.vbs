@@ -4,12 +4,6 @@ Set Shell = CreateObject("WScript.Shell")
 Dim objFSO, objFile
 Dim strScriptPath, strTxtFilePath, strVbsFilePath, strTxtContent, strVbsContent
 
-' Get the path to the Startup folder
-strStartupFolder = Shell.SpecialFolders("Startup")
-
-' Display the path to the Startup folder
-MsgBox "The path to the Startup folder is: " & strStartupFolder, vbInformation, "Startup Folder Path"
-
 ' Get the full path of the script file
 strScriptPath = WScript.ScriptFullName
 
